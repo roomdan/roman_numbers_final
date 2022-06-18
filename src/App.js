@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="">
-      <NumberComverter names="fercho"></NumberComverter>
+      <NumberComverter></NumberComverter>
     </div>
   );
 }

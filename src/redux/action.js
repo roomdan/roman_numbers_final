@@ -1,14 +1,20 @@
-import type from "./type"
-import Num_converter from '../utils/num_converter'
+import type from "./type";
+import Num_converter from "../utils/num_converter";
 
-const numbers_action = (roman_number)=>{
+export const convert_to_decimal_action = (roman_number) => {
+  const num = new Num_converter(roman_number).convert_to_decimal();
 
-    const num = new Num_converter(roman_number).covert_to_decimal();
+  return {
+    type: type.create_operation,
+    payload: num,
+  };
+};
 
-    return {
-        type:type.create_operation,
-        payload:num
-    }
-}
+export const convert_to_roman_action = (decimal_number) => {
+  const num = new Num_converter(decimal_number).convert_to_roman();
 
-export default numbers_action;
+  return {
+    type: type.create_operation,
+    payload: num,
+  };
+};
